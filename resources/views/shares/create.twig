@@ -1,0 +1,61 @@
+{% extends '@Socializr/app.twig' %}
+{% set data = session_flashed('__form_data').0 %}
+{% set fd = (data) ? data : fd %}
+{% block content %}
+
+    <form action="" method="post">
+        <div class="form-row">
+            <label for="title">Title:</label>
+            <label class="error">{{ errors.0.title }}</label>
+            <input id="title" type="text" value="{{ fd.title }}" name="title">
+        </div>
+
+        <div class="form-row">
+            <label for="slug">Handle:</label>
+            <input id="slug" type="text" value="{{ fd.slug }}" name="slug">
+            <label class="error">{{ errors.slug }}</label>
+        </div>
+
+        <div class="form-row">
+            <label for="url">Url:</label>
+            {% raw %}
+            <p>The following handles can be used to add dynamic content into the url.</p>
+            <table class="wp-list-table widefat fixed striped posts mb">
+                <thead>
+                    <th>Handle</th>
+                    <th>Return Value</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ blog_url }}</td>
+                        <td>Return the blog home url</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ blog_title }}</td>
+                        <td>Return the blog title</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ current_url }}</td>
+                        <td>Returns the current page url</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ current_title }}</td>
+                        <td>Return the current post/page title.</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endraw %}
+            <label class="error">{{ errors.0.url }}</label>
+            <input id="url" type="url" value="{{ fd.url }}" name="url">
+        </div>
+
+        <div class="form-row">
+            <input class="button button-primary" type="submit" name="submit" value="Save">
+            {% if deleteLink %}<a class="button" href="{{ deleteLink }}">Delete</a>{% endif %}
+
+        </div>
+    </form>
+{% endblock %}

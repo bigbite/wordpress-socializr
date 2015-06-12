@@ -1,0 +1,45 @@
+{% extends '@Socializr/app.twig' %}
+
+{% block content %}
+    <div class="wrap">
+        <h3>Social Sets <a href="{{ Socializr.panel('sets') }}" class="add-new-h2">Add New</a></h3>
+    </div>
+    <table class="wp-list-table widefat fixed striped posts">
+        <thead>
+            <th>Title</th>
+            <th>Handle</th>
+            <th>Type</th>
+        </thead>
+        <tbody>
+            {% for set in sets %}
+            <tr>
+                <td><a href="{{ Socializr.edit('sets', set.id) }}">{{ set.title }}</a></td>
+                <td>{{ set.slug }}</td>
+                <td>{{ set.type }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="wrap">
+        <h3>Social Shares  <a href="{{ Socializr.panel('shares') }}" class="add-new-h2">Add New</a></h3>
+    </div>
+
+    <table class="wp-list-table widefat fixed striped posts">
+        <thead>
+            <th>Title</th>
+            <th>Handle</th>
+            <th>Url</th>
+        </thead>
+        <tbody>
+            {% for share in shares %}
+            <tr>
+                <td><a href="{{ Socializr.edit('shares', share.id) }}">{{ share.title }}</a></td>
+                <td>{{ share.slug }}</td>
+                <td>{{ share.url }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}
