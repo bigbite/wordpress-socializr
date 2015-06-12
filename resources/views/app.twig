@@ -1,0 +1,21 @@
+<div class="socialyzr">
+    <h2 class="title"><img class="logo" src="{{ Socializr.helper('assetUrl', 'icon.png') }}" alt=""> {{ section_title }}</h2>
+
+    <div class="container">
+    {% block content %}
+        Please Add Content Here
+    {% endblock %}
+    </div>
+
+    <div class="footer">
+        Made with ♥ using <a href="//getherbert.com">Herbert</a>
+    </div>
+
+    <script src="{{ Socializr.helper('assetUrl', 'scripts.js') }}"></script>
+
+    <script>
+    {% block scripts %}{% endblock %}
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends '@Socializr/app.twig' %}
+{% set data = session_flashed('__form_data').0 %}
+{% set fd = (data) ? data : fd %}
+{% block content %}
+    <div class="hidden">
+        <table>
+            <tr class="template-of-profile">
+                <td><input type="text" name="profile[0][title]"></td>
+                <td><input type="text" name="profile[0][handle]"></td>
+                <td><input type="text" name="profile[0][url]"></td>
+                <td><a href="#" class="button button-large" profile-remove>-</a><a class="button button-primary button-large" href="#" profile-add>+</a></td>
+            </tr>
+        </table>
+    </div>
+    <form action="{{ action_url }}" method="POST">
+        <div class="form-row">
+            <label for="title">Title: </label>
+            <label class="error">{{ errors.0.title ? 'This field is required' : '' }}</label>
+            <input id="title" type="text" name="title" value="{{ fd.title }}">
+        </div>
+
+        <div class="form-row">
+            <label for="slug">Handle: </label>
+            <input id="slug" type="text" name="slug" value="{{ fd.slug }}">
+        </div>
+
+        <div class="form-row">
+            <label for="">Type:</label>
+            <select name="type" id="" type-selector>
+                <option value="SHARE" {{ fd.type == 'SHARE' ? 'selected' : '' }} >Share</option>
+                <option value="PROFILE" {{ fd.type == 'PROFILE' ? 'selected' : '' }}>Profiles</option>
+            </select>
+        </div>
+
+        <div class="form-row {{ fd.type == 'PROFILE' ? 'hidden' : '' }}" form-share>
+            <label>Shares: <small>(Multiselect, hold ctrl/cmd)</small> </label>
+            <label class="error">{{ errors.0.shares  ? 'This field is required' : '' }}</label>
+            <select name="shares[]" id="" multiple="multiple">
+                {% for share in shares %}
+                    <option value="{{ share.id }}"{{ (share.id in fd.shares) or (share.id in fd.shares.id) ? ' selected' : '' }}>{{ share.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-row {{ fd.type == 'PROFILE' ? '' : 'hidden' }}" form-profile>
+            <label>Social Profiles</label>
+            <label class="error">{{ errors.0['profile.*.title'] or errors.0['profile.*.url'] ? 'Title and URL are required, the handle will be automatically filled if not specified' : '' }}</label>
+            <table class="wp-list-table widefat fixed striped posts">
+                <thead>
+                    <th>Name</th>
+                    <th>Handle</th>
+                    <th>URL</th>
+                    <th></th>
+                </thead>
+                <tbody form-profile-rows  class="wow">
+
+                    {% if fd.profile | length %}
+                        {% for profile in fd.profile %}
+                        <tr id="{{ loop.index }}">
+                            <td><input type="text" name="profile[{{ loop.index }}][title]" value="{{ profile.title }}"></td>
+                            <td><input type="text" name="profile[{{ loop.index }}][handle]" value="{{ profile.handle }}"></td>
+                            <td><input type="text" name="profile[{{ loop.index }}][url]" value="{{ profile.url }}"></td>
+                            <td><a href="#" class="button button-large" profile-remove>-</a><a class="button button-primary button-large" href="#" profile-add>+</a></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr id="0">
+                            <td><input type="text" name="profile[0][title]"></td>
+                            <td><input type="text" name="profile[0][handle]"></td>
+                            <td><input type="text" name="profile[0][url]"></td>
+                            <td><a href="#" class="button button-large" profile-remove>-</a><a class="button button-primary button-large" href="#" profile-add>+</a></td>
+                        </tr>
+                    {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+
+        <input class="button button-primary" type="submit">
+
+        {% if deleteLink %}<a class="button" href="{{ deleteLink }}">Delete</a>{% endif %}
+    </form>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+    Socializr.init();
+{% endblock %}

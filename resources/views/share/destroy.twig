@@ -1,0 +1,9 @@
+{% extends '@Socializr/app.twig' %}
+
+{% block content %}
+    <h1>Are you sure you want to delete this set?</h1>
+    <form action="" method="POST">
+        <input type="submit" value="Yes, i'm sure" class="button button-large button-primary">
+        <a class="button button-large" href="{{ panel_url('Socializr::index') }}">NO! I clicked the wrong button</a>
+    </form>
+{% endblock %}

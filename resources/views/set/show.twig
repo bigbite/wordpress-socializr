@@ -1,0 +1,90 @@
+{% extends '@Socializr/app.twig' %}
+
+{% block content %}
+    <div class="hidden">
+        <table>
+            <tr class="template-of-profile">
+                <td><input type="text" name="profile[0][title]"></td>
+                <td><input type="text" name="profile[0][handle]"></td>
+                <td><input type="text" name="profile[0][url]"></td>
+                <td><a href="#" class="button button-large" profile-remove>-</a><a class="button button-primary button-large" href="#" profile-add>+</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <form action="{{ action_url }}" method="POST">
+
+        <input type="hidden" name="id" value="{{ set.id }}">
+
+        <div class="form-row">
+            <label for="title">Title: </label>
+            <input id="title" type="text" name="title" value="{{ set.title }}" required>
+            <label class="error">{{ errors.title }}</label>
+        </div>
+
+        <div class="form-row">
+            <label for="slug">Slug: </label>
+            <input id="slug" type="text" name="slug" value="{{ set.slug }}">
+        </div>
+
+        <div class="form-row">
+            <label for="">Type:</label>
+            <select name="type" id="" required type-selector>
+                <option value="share" {{ set.type in "share" ? 'selected' : '' }}>Share</option>
+                <option value="profile" {{ set.type in 'profile' ? 'selected' : '' }}>Profile</option>
+            </select>
+        </div>
+
+        <div class="form-row {{ set.type == 'links' or set.type is null ? '' : 'hidden' }}" form-share>
+            <label>Links: <small>(Multiselect, hold ctrl/cmd)</small> </label>
+            <select name="links[]" id="" multiple="multiple" >
+                {% for link in links %}
+                    <option value="{{ link.id }}" {{ link.id in selected_links ? 'selected' : '' }}>{{ link.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <div class="form-row {{ set.type == 'profile' ? '' : 'hidden' }}" form-profile>
+            <label>Social Links</label>
+            <table class="wp-list-table widefat fixed striped posts">
+                <thead>
+                    <th>Name</th>
+                    <th>Handle</th>
+                    <th>URL</th>
+                    <th></th>
+                </thead>
+                <tbody form-profile-rows>
+                {% if set.type == 'profile' %}
+                    {% for selected in selected_links %}
+                    <tr id="{{ loop.index }}">
+                        <td><input type="text" name="profile[{{ loop.index }}][title]" value="{{ selected.title }}"></td>
+                        <td><input type="text" name="profile[{{ loop.index }}][handle]" value="{{ selected.handle }}"></td>
+                        <td><input type="text" name="profile[{{ loop.index }}][url]" value="{{ selected.url }}"></td>
+                        <td><a href="#" class="button button-large" profile-remove>-</a><a class="button button-primary button-large" href="#" profile-add>+</a></td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr id="0">
+                        <td><input type="text" name="profile[0][title]"></td>
+                        <td><input type="text" name="profile[0][handle]"></td>
+                        <td><input type="text" name="profile[0][url]"></td>
+                        <td><a href="#" class="button button-large" profile-remove>-</a><a class="button button-primary button-large" href="#" profile-add>+</a></td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+        <input class="button button-primary" type="submit">
+
+        {% if set %}
+        <div class="row-actions" style="visibility:visible !important; margin-left: 15px; margin-top: 5px; display: inline-block; vertical-align: middle;">
+            <span class="trash">
+                <a class="submitdelete" href="{{ delete_url }}">Delete This Social Set</a>
+            </span>
+        </div>
+        {% endif %}
+    </form>
+
+{% endblock %}

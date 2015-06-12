@@ -1,0 +1,130 @@
+{% extends '@Socializr/app.twig' %}
+
+{% block content %}
+    {% include '@Socializr/docs/menu.twig' %}
+    <h1 id="creation-of-sets-social-share-links">Creation of Sets &amp; Social Share links</h1>
+<h2 id="creating-a-social-set">Creating a social set</h2>
+<p>The creation of social sets &amp; custom social share links is remmarkably simple, with a few hits of your keyboard and a few mouse clicks you&#39;ll be well on your way.</p>
+<p>We will start by going to the create a set page. Todo this you can follow the instructions in the image below or <a href="{{ Socializr.panel('sets') }}">click here</a></p>
+<p><img src="http://jrm.pw/1hZBb+" alt="Instructions"></p>
+<p>Once we are on the page we will be greeted by this form</p>
+<p><img src="http://jrm.pw/NrZf+" alt="Form"></p>
+<p>Regardless to whether you are making a set of share links or a set of profile links the beginning process is exactly the same. The first two fields wont change at all but the second two will. So lets talk about the first two fields, the first of the two is <code>Title</code> and the second <code>Handle</code></p>
+<h5 id="-title-"><em>Title</em></h5>
+<blockquote>
+<p>The identifier for each set in a human readable form (<strong>Required</strong>)</p>
+</blockquote>
+<h5 id="-handle-"><em>Handle</em></h5>
+<blockquote>
+<p>This is the identier that socializr uses to fetch the set. this is not required as if it is left blank then socializr will pre-populate it with a safe version of the title.</p>
+</blockquote>
+<p>Now that we have got the first two forms out of the way its time to finish off our set. Since there are two types of sets they are split up into sections, to see the step two for shares or step two for profiles you can click <a href="#creation-of-a-share-set">here</a> and <a href="#creating-a-social-set">here</a>, respectively.</p>
+<hr>
+<h3 id="creation-of-a-share-set">Creation of a Share Set</h3>
+<p>In the previous section we covered the basics for creating either type of social set. But this time we are going to go into specific detail on how to create a Sharing link set. If you haven&#39;t read the previous part then I suggest you go back and do so.</p>
+<p>We are going to be looking into the <em>other two</em> fields in this section. <img src="http://jrm.pw/11Djs+" alt="fields"></p>
+<p>The first is to select the type of field, so since Share is already selected it means we can leave this alone. But the other is a rather strange select box containing some social networks. To select a network just click on the required one, but to select multiple there is a few ways to do it. If you want to select a block of the you can click and drag over the required ones or you can cmd + click or ctrl + click depending on whether you are on mac or windows, respectively.</p>
+<p>So once all the Fields are selected hit the good ol&#39; save button and you&#39;re good to go. Once you hit save you should be greeted by this nice alert saying that it was successful.</p>
+<p><img src="http://jrm.pw/fPy8+" alt="success"></p>
+<p>If you have completed this then you can move onto including your social set on <a href="#using-socializr">templates</a> or in <a href="#using-socializr">posts</a></p>
+<hr>
+<h3 id="creation-of-a-profile-set">Creation of a Profile Set</h3>
+<p>When creating a set you will start off with 4 fields. The first two we already covered (title and handle) which leaves us with two more, <code>Type</code> and <code>Shares</code>. We can disregard <code>Shares</code> as it isnt relevant and focus on Type. So currently the type box contains the word <code>Share</code> well click it and select <code>Profiles</code> like so:</p>
+<p><img src="http://jrm.pw/1kNhy+" alt="selecting profiles"></p>
+<p>The Shares section should disappear and be replaced with this section here </p>
+<p><img src="http://jrm.pw/1b2TL+" alt="profiles fields"></p>
+<p>Lets explain the fields:</p>
+<h5 id="-name-"><em>Name</em></h5>
+<blockquote>
+<p>The identifier for each set in a human readable form (<strong>Required</strong>)</p>
+</blockquote>
+<h5 id="-handle-"><em>Handle</em></h5>
+<blockquote>
+<p>This is the identier that socializr returns when fetching profiles from a  set. this is not required as if it is left blank then socializr will pre-populate it with a safe version of the name.</p>
+</blockquote>
+<h5 id="-url-"><em>URL</em></h5>
+<blockquote>
+<p>This is the link for your profile. (<strong>Required</strong>)</p>
+</blockquote>
+<p>Along with this fields come these two buttons:</p>
+<p><img src="http://jrm.pw/1iZpY+" alt="add/remove"></p>
+<p>The first is to remove that current row and the second is to add a new row underneath the current one.</p>
+<p>So the nexxt step is to fill in all the fields and hit the save button. Once submitted you should see an alert at the top of the screen saying it was successful, if not then the errors should be reported to you.</p>
+<p><img src="http://jrm.pw/1gaxj+" alt="success-2"></p>
+<p>If you have completed this then you can move onto including your social set on <a href="#using-socializr">templates</a> or in <a href="#using-socializr">posts</a></p>
+<hr>
+<h3 id="creation-of-custom-sharing-links">Creation of custom sharing links</h3>
+<p>An introduction to sharing links, by default Socializr adds <code>Facebook, Twitter, Google+, LinkedIn &amp; Reddit</code> these 5 are undeletable. To add custom links you click the add new button on the index page or click <code>Shares</code> in the menu sidebar like so:</p>
+<p><img src="http://jrm.pw/JFb7+" alt="creating custom link"></p>
+<p>Upon clicking either of the links you will be greeted by a fairly simple form like so </p>
+<p><img src="http://jrm.pw/1b4ZO+" alt="form"></p>
+<p>Lets explain what these fields are:</p>
+<h5 id="-title-"><em>Title</em></h5>
+<blockquote>
+<p>The identifier for each share in a human readable form (<strong>Required</strong>)</p>
+</blockquote>
+<h5 id="-handle-"><em>Handle</em></h5>
+<blockquote>
+<p>This is the identier that socializr uses identify the share and returns it as an index when returning the set as an array. This is not required as if it is left blank then socializr will pre-populate it with a safe version of the title.</p>
+</blockquote>
+<h5 id="-url-"><em>URL</em></h5>
+<blockquote>
+    {% raw %}
+<p>This is where you put the link for sharing the way each provider needs it formatting for example <code>Pinterest</code>&#39;s would be <code>https://pinterest.com/pin/create/button/?url={{ current_url }}&amp;description={{ current_title }}</code></p>
+</blockquote>
+    {% endraw %}
+<p>Lets break down the pinterest example url. As you can see it has some weird tags in the url. these will be replaces with specific values (theyre explained on the form) once everything is filled in you can hit save and like the  rest, you will be able to see a success message if it was successful. Like so: </p>
+<p><img src="http://jrm.pw/15GM2+" alt="success"></p>
+<h1 id="editing-deleting-sets-and-shares">Editing &amp; Deleting Sets and Shares</h1>
+<h2 id="editing-sets">Editing Sets</h2>
+<p>To edit a set you click on a title of your desired set Like so </p>
+<p><img src="http://jrm.pw/1cg1c+" alt="click"></p>
+<p>The form is exactly the same apart from its populated with your current data and has a delete link at the bottom</p>
+<p><img src="http://jrm.pw/1c8og+" alt="form"></p>
+<p>Once you have modified it then just hit Submit and it will save your new preferences.</p>
+<h2 id="deleting-sets">Deleting Sets</h2>
+<p>To delete a set you click on a title of your desired set Like so </p>
+<p><img src="http://jrm.pw/1cg1c+" alt="click"></p>
+<p>then hit the delete button:</p>
+<p><img src="http://jrm.pw/117Zp+" alt="delete button"></p>
+<p>You will be taken to this screen</p>
+<p><img src="http://jrm.pw/10EsA+" alt="delete screen"></p>
+<p>Then just hit the yes button. </p>
+<p>Poof! the set has now been deleted.</p>
+<h2 id="editing-shares">Editing Shares</h2>
+<p>To edit a share you click on a title of your desired share Like so </p>
+<p><img src="http://jrm.pw/1gJr1+" alt="click"></p>
+<p>The form is exactly the same apart from its populated with your current data and has a delete link at the bottom</p>
+<p><img src="http://jrm.pw/14jGG+" alt="form"></p>
+<p>Once you have modified it then just hit Submit and it will save your new preferences.</p>
+<h2 id="deleting-shares">Deleting Shares</h2>
+<p>To delete a share you click on a title of your desired share Like so </p>
+<p><img src="http://jrm.pw/1gJr1+" alt="click"></p>
+<p>then hit the delete button:</p>
+<p><img src="http://jrm.pw/14jGG+" alt="delete button"></p>
+<p>You will be taken to this screen</p>
+<p><img src="http://jrm.pw/10EsA+" alt="delete screen"></p>
+<p>Then just hit the yes button. </p>
+<p>Poof! the share has now been deleted.</p>
+<h1 id="using-socializr">Using Socializr</h1>
+<p>There is a few ways you can use Socializr in your wordpress install whether you&#39;re a dev or just a writer. It doesnt matter as there is a few ways, you can use the shortcode (this can be put in the content section of a post/page) This is how you do it:</p>
+<p><code>[socializr handle=&quot;put-your-handle-here&quot;]</code></p>
+<p><strong>Remember to replace <code>put-your-handle-here</code> with the handle of your social set</strong></p>
+<p>Or if you have access to the template then you can do these functions (this can enable custom styling).</p>
+<pre><code class="lang-language-php">&lt;?php echo socializr(&#39;your-handle&#39;, true); ?&gt;
+</code></pre>
+<p>This would echo out each link into a list item</p>
+<p>or if you would like to just return the values in an array you can do this </p>
+<pre><code class="lang-language-php">&lt;?php $values = socializr(&#39;your-handle&#39;); ?&gt;
+</code></pre>
+<p>This would just return an array of your profiles/shares (each item in the array is an object and has the properties of <code>title</code> and <code>link</code> these could be accessed like so</p>
+<pre><code class="lang-language-php">    &lt;?php
+
+        $links = socializr(&#39;your-handle&#39;);
+
+        foreach ($links as $key =&gt; $link) {
+            echo  $link-&gt;title;
+            echo  $link-&gt;url;
+        }
+</code></pre>
+{% endblock %}
