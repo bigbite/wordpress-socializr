@@ -1,5 +1,53 @@
 [
     {
+        "name": "vlucas/valitron",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vlucas/valitron.git",
+            "reference": "d09596881bab793736deee668c872df0856342dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vlucas/valitron/zipball/d09596881bab793736deee668c872df0856342dd",
+            "reference": "d09596881bab793736deee668c872df0856342dd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2014-12-27 16:32:29",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Valitron": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD"
+        ],
+        "authors": [
+            {
+                "name": "Vance Lucas",
+                "email": "vance@vancelucas.com",
+                "homepage": "http://www.vancelucas.com"
+            }
+        ],
+        "description": "Simple, elegant, stand-alone validation library with NO dependencies",
+        "homepage": "http://github.com/vlucas/valitron",
+        "keywords": [
+            "valid",
+            "validation",
+            "validator"
+        ]
+    },
+    {
         "name": "psr/log",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -596,12 +644,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/support.git",
-            "reference": "6dd16ce92100f364887ce4cb29fb63558a25da43"
+            "reference": "71fb24bd66de4111a0e959a85a916460cb9fc03f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/support/zipball/6dd16ce92100f364887ce4cb29fb63558a25da43",
-            "reference": "6dd16ce92100f364887ce4cb29fb63558a25da43",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/71fb24bd66de4111a0e959a85a916460cb9fc03f",
+            "reference": "71fb24bd66de4111a0e959a85a916460cb9fc03f",
             "shasum": ""
         },
         "require": {
@@ -615,7 +663,7 @@
             "jeremeamia/superclosure": "Required to be able to serialize closures (~2.0).",
             "symfony/var-dumper": "Required to use the dd function (2.8.*)."
         },
-        "time": "2015-06-08 19:15:37",
+        "time": "2015-06-12 12:26:04",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -754,12 +802,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/http.git",
-            "reference": "b538161d88a74bbe2cc371cc909d2c4770c036a8"
+            "reference": "36751cf754c91ebe1296a54e8efb56727ebf9763"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/http/zipball/b538161d88a74bbe2cc371cc909d2c4770c036a8",
-            "reference": "b538161d88a74bbe2cc371cc909d2c4770c036a8",
+            "url": "https://api.github.com/repos/illuminate/http/zipball/36751cf754c91ebe1296a54e8efb56727ebf9763",
+            "reference": "36751cf754c91ebe1296a54e8efb56727ebf9763",
             "shasum": ""
         },
         "require": {
@@ -769,7 +817,7 @@
             "symfony/http-foundation": "2.8.*",
             "symfony/http-kernel": "2.8.*"
         },
-        "time": "2015-06-09 13:30:19",
+        "time": "2015-06-13 22:48:28",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -794,112 +842,6 @@
         ],
         "description": "The Illuminate Http package.",
         "homepage": "http://laravel.com"
-    },
-    {
-        "name": "illuminate/container",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/container.git",
-            "reference": "f39a0b1274ef1f055f6115ce82481487113a5bd6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/container/zipball/f39a0b1274ef1f055f6115ce82481487113a5bd6",
-            "reference": "f39a0b1274ef1f055f6115ce82481487113a5bd6",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/contracts": "5.2.*",
-            "php": ">=5.5.9"
-        },
-        "time": "2015-06-04 21:36:40",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Container\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            }
-        ],
-        "description": "The Illuminate Container package.",
-        "homepage": "http://laravel.com"
-    },
-    {
-        "name": "illuminate/database",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/database.git",
-            "reference": "7826a7d2c42a553b7aa80925d239b960375a33ac"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/database/zipball/7826a7d2c42a553b7aa80925d239b960375a33ac",
-            "reference": "7826a7d2c42a553b7aa80925d239b960375a33ac",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/container": "5.2.*",
-            "illuminate/contracts": "5.2.*",
-            "illuminate/support": "5.2.*",
-            "nesbot/carbon": "~1.19",
-            "php": ">=5.5.9"
-        },
-        "suggest": {
-            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
-            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-            "illuminate/console": "Required to use the database commands (5.2.*).",
-            "illuminate/events": "Required to use the observers with Eloquent (5.2.*).",
-            "illuminate/filesystem": "Required to use the migrations (5.2.*)."
-        },
-        "time": "2015-06-08 19:15:37",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "5.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Illuminate\\Database\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            }
-        ],
-        "description": "The Illuminate Database package.",
-        "homepage": "http://laravel.com",
-        "keywords": [
-            "database",
-            "laravel",
-            "orm",
-            "sql"
-        ]
     },
     {
         "name": "symfony/var-dumper",
@@ -963,6 +905,166 @@
         ]
     },
     {
+        "name": "vierbergenlars/php-semver",
+        "version": "3.0.1",
+        "version_normalized": "3.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vierbergenlars/php-semver.git",
+            "reference": "516bb3061577e60e9420cbecc479362d3ad8c7f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vierbergenlars/php-semver/zipball/516bb3061577e60e9420cbecc479362d3ad8c7f1",
+            "reference": "516bb3061577e60e9420cbecc479362d3ad8c7f1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "simpletest/simpletest": "1.1.*"
+        },
+        "time": "2015-05-02 19:28:54",
+        "bin": [
+            "bin/semver",
+            "bin/update-versions"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "vierbergenlars\\SemVer\\": "src/",
+                "vierbergenlars\\LibJs\\": "src/"
+            },
+            "classmap": [
+                "src/vierbergenlars/SemVer/internal.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Lars Vierbergen",
+                "email": "vierbergenlars@gmail.com"
+            }
+        ],
+        "description": "The Semantic Versioner for PHP",
+        "keywords": [
+            "semantic",
+            "semver",
+            "versioning"
+        ]
+    },
+    {
+        "name": "illuminate/container",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/container.git",
+            "reference": "9c27569a4e639e6ffbab1f56b4c862f23890a4de"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/container/zipball/9c27569a4e639e6ffbab1f56b4c862f23890a4de",
+            "reference": "9c27569a4e639e6ffbab1f56b4c862f23890a4de",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/contracts": "5.2.*",
+            "php": ">=5.5.9"
+        },
+        "time": "2015-06-13 22:48:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Container\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
+        ],
+        "description": "The Illuminate Container package.",
+        "homepage": "http://laravel.com"
+    },
+    {
+        "name": "illuminate/database",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/database.git",
+            "reference": "71e9da58a0ac84bbbd5ca4536ce838a0d8c05d22"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/database/zipball/71e9da58a0ac84bbbd5ca4536ce838a0d8c05d22",
+            "reference": "71e9da58a0ac84bbbd5ca4536ce838a0d8c05d22",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/container": "5.2.*",
+            "illuminate/contracts": "5.2.*",
+            "illuminate/support": "5.2.*",
+            "nesbot/carbon": "~1.19",
+            "php": ">=5.5.9"
+        },
+        "suggest": {
+            "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
+            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+            "illuminate/console": "Required to use the database commands (5.2.*).",
+            "illuminate/events": "Required to use the observers with Eloquent (5.2.*).",
+            "illuminate/filesystem": "Required to use the migrations (5.2.*)."
+        },
+        "time": "2015-06-13 22:48:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Database\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
+        ],
+        "description": "The Illuminate Database package.",
+        "homepage": "http://laravel.com",
+        "keywords": [
+            "database",
+            "laravel",
+            "orm",
+            "sql"
+        ]
+    },
+    {
         "name": "twig/twig",
         "version": "1.x-dev",
         "version_normalized": "1.9999999.9999999.9999999-dev",
@@ -1019,108 +1121,6 @@
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
-        ]
-    },
-    {
-        "name": "vierbergenlars/php-semver",
-        "version": "3.0.1",
-        "version_normalized": "3.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/vierbergenlars/php-semver.git",
-            "reference": "516bb3061577e60e9420cbecc479362d3ad8c7f1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/vierbergenlars/php-semver/zipball/516bb3061577e60e9420cbecc479362d3ad8c7f1",
-            "reference": "516bb3061577e60e9420cbecc479362d3ad8c7f1",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "simpletest/simpletest": "1.1.*"
-        },
-        "time": "2015-05-02 19:28:54",
-        "bin": [
-            "bin/semver",
-            "bin/update-versions"
-        ],
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "vierbergenlars\\SemVer\\": "src/",
-                "vierbergenlars\\LibJs\\": "src/"
-            },
-            "classmap": [
-                "src/vierbergenlars/SemVer/internal.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Lars Vierbergen",
-                "email": "vierbergenlars@gmail.com"
-            }
-        ],
-        "description": "The Semantic Versioner for PHP",
-        "keywords": [
-            "semantic",
-            "semver",
-            "versioning"
-        ]
-    },
-    {
-        "name": "vlucas/valitron",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/vlucas/valitron.git",
-            "reference": "d09596881bab793736deee668c872df0856342dd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/vlucas/valitron/zipball/d09596881bab793736deee668c872df0856342dd",
-            "reference": "d09596881bab793736deee668c872df0856342dd",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2014-12-27 16:32:29",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Valitron": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD"
-        ],
-        "authors": [
-            {
-                "name": "Vance Lucas",
-                "email": "vance@vancelucas.com",
-                "homepage": "http://www.vancelucas.com"
-            }
-        ],
-        "description": "Simple, elegant, stand-alone validation library with NO dependencies",
-        "homepage": "http://github.com/vlucas/valitron",
-        "keywords": [
-            "valid",
-            "validation",
-            "validator"
         ]
     },
     {

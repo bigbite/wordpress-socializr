@@ -34,6 +34,6 @@ class Profile extends Model
      */
     public function set()
     {
-        return $this->belongsTo(Set::class);
+        return $this->belongsTo(__NAMESPACE__ . '\\Set');
     }
 }

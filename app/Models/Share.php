@@ -34,6 +34,6 @@ class Share extends Model
      */
     public function sets()
     {
-        return $this->belongsToMany(Set::class, 'socializr_sets_shares', 'share_id', 'set_id');
+        return $this->belongsToMany(__NAMESPACE__ . '\\Set', 'socializr_sets_shares', 'share_id', 'set_id');
     }
 }

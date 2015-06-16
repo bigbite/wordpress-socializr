@@ -3,7 +3,7 @@ Contributors: bigbitecreative
 Tags: social,sharing,links
 Tested up to: 4.2.2
 Stable tag: 1.0.0
-Requires at least: 3.0
+Requires at least: 3.4
 
 A WordPress plugin to create social share links and sets
 
