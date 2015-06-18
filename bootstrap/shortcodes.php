@@ -7,6 +7,6 @@ $shortcode->add(
     'socializr',
     'Socializr::showSet',
     [
-        'slug' => 'handle'
+        'handle' => 'slug'
     ]
 );
