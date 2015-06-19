@@ -12,6 +12,8 @@ logs/*
 results
 npm-debug.log
 node_modules
+vendor/**/test/
+vendor/**/tests/
 
 ## Bower
 # src/components
